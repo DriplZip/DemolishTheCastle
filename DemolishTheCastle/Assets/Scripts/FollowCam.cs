@@ -30,6 +30,8 @@ public class FollowCam : MonoBehaviour
         destination.z = _cameraZCoord;
 
         transform.position = destination;
+
+        Camera.main.orthographicSize = destination.y + 10;
     }
 
     // Start is called before the first frame update
