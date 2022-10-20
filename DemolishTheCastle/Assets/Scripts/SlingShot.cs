@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SlingShot : MonoBehaviour
 {
+    private static SlingShot _slingShot;
+    
     private GameObject _launchPoint;
     private Vector3 _launchPointPosition;
     
@@ -17,9 +19,13 @@ public class SlingShot : MonoBehaviour
     public GameObject projectilePrefab;
 
     public float velocityMulti = 8f;
+    
+    public static Vector3 LaunchPosition => _slingShot == null ? Vector3.zero : _slingShot._launchPointPosition;
 
     private void Awake()
     {
+        _slingShot = this;
+        
         Transform launchPointTransform = transform.Find("LaunchPoint");
         
         _launchPoint = launchPointTransform.gameObject;
