@@ -85,6 +85,9 @@ public class SlingShot : MonoBehaviour
             FollowCam.pointOfInterest = _projectile;
             
             _projectile = null;
+            
+            GameManager.ShotFired();
+            ProjectileLine.projectileLine.PointOfInterest = _projectile;
         }
     }
 }

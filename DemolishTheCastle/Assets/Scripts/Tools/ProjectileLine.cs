@@ -13,7 +13,7 @@ public class ProjectileLine : MonoBehaviour
     private GameObject _pointOfInterest;
     private List<Vector3> _points;
 
-    private GameObject PointOfInterest
+    public GameObject PointOfInterest
     {
         get
         {
@@ -42,7 +42,7 @@ public class ProjectileLine : MonoBehaviour
         _points = new List<Vector3>();
     }
 
-    private void Clear()
+    public void Clear()
     {
         _pointOfInterest = null;
         _line.enabled = false;
